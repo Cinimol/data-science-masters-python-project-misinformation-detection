@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Large generated data — rebuild with `make data && make features`
+data/raw/
+data/images/
+data/interim/
+data/processed/*.npz
+data/processed/*.parquet
+
+# Local logs and rendering scratch
+logs_*.txt
+docs/page-*.jpg
+docs/hi-*.jpg
+docs/crop.png
+docs/*.pdf
+docs/full_report.md
+docs/_apply.py
+docs/_parts.py
+docs/_build_appendices.py
+*.zip

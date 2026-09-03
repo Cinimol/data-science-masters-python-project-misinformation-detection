@@ -1,0 +1,16 @@
+variant,order,protocol,delta_macro_f1
+cgf,0,random,0.0
+cgf_no_gate,1,random,-0.003612695509718211
+cgf_no_cons,2,random,-0.014990667130267421
+cgf_no_inter,3,random,0.0008562507197727998
+cgf_no_meta,4,random,-0.023439506846166802
+cgf,0,source,0.0
+cgf_no_gate,1,source,0.040481454299182706
+cgf_no_cons,2,source,0.05428340285079636
+cgf_no_inter,3,source,0.015809230835688748
+cgf_no_meta,4,source,-0.01916865894823505
+cgf,0,temporal,0.0
+cgf_no_gate,1,temporal,-0.005052932451063086
+cgf_no_cons,2,temporal,-0.04130826296805212
+cgf_no_inter,3,temporal,0.002240510319346467
+cgf_no_meta,4,temporal,-0.04718740747179817

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device" version="24.0.0">
+  <diagram id="ethics" name="Ethics to Artefact: Traceability">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1020" pageHeight="882" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ethics_title" value="Ethics to Artefact: Traceability" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=20;fontStyle=1;fontColor=#1F3864;" vertex="1" parent="1">
+          <mxGeometry x="40" y="28" width="940" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_note" value="Every ethical position on the left changes something in the middle column, and the right column is where a marker can check that it did." style="text;html=1;align=left;verticalAlign=top;fontFamily=Helvetica;fontSize=10;fontStyle=2;fontColor=#5A6B84;" vertex="1" parent="1">
+          <mxGeometry x="48" y="804" width="924" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_start" value="Ethical consideration" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="96" width="240" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_mid" value="Decision taken in the artefact" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="96" width="260" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_end" value="Evidence in the report" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="96" width="240" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_p1" value="Personal data&lt;br&gt;is re-identifiable" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="176" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_p2" value="Drop the author column&lt;br&gt;at build time" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="176" width="260" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_p3" value="Asserted by a unit test" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="176" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_con1" value="Public posting&lt;br&gt;is not consent" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="272" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_con2" value="Aggregate reporting only;&lt;br&gt;no post reproduced" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="272" width="260" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_con3" value="Contextual integrity test" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="272" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_lab1" value="Labels are proxies,&lt;br&gt;not adjudications" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="368" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_lab2" value="Build protocols the proxy&lt;br&gt;cannot be exploited under" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="368" width="260" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_lab3" value="Protocols B and rotation" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="368" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_bias1" value="One aggregate&lt;br&gt;conceals disparity" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="464" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_bias2" value="Report each held-out&lt;br&gt;community separately" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="464" width="260" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_bias3" value="0.472 to 0.841 spread" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="464" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_mis1" value="A detector can&lt;br&gt;become a censor" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="560" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_mis2" value="Emit a calibrated score,&lt;br&gt;never a decision" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="560" width="260" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_mis3" value="ECE 0.223 to 0.138" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="560" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_env1" value="Compute has an&lt;br&gt;environmental cost" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="656" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_env2" value="Freeze the encoders" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="380" y="656" width="260" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_env3" value="Five CPU-hours, no GPU" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="710" y="656" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_p1" target="ethics_p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_p2" target="ethics_p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_con1" target="ethics_con2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_con2" target="ethics_con3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_lab1" target="ethics_lab2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_lab2" target="ethics_lab3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_bias1" target="ethics_bias2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_bias2" target="ethics_bias3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_mis1" target="ethics_mis2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_mis2" target="ethics_mis3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_env1" target="ethics_env2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ethics_env2" target="ethics_env3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="ethics_start" target="ethics_p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="ethics_mid" target="ethics_p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ethics_e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="ethics_end" target="ethics_p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

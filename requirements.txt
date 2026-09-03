@@ -1,0 +1,20 @@
+# CPU-only PyTorch: keeps the install small and avoids pulling CUDA wheels.
+# On Apple silicon the standard wheel already includes the MPS backend.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch>=2.2,<3
+transformers>=4.44
+tokenizers>=0.19
+
+numpy>=1.26
+pandas>=2.1
+pyarrow>=14
+scikit-learn>=1.4
+scipy>=1.11
+
+pillow>=10.0
+requests>=2.31
+
+matplotlib>=3.8
+
+pytest>=8.0

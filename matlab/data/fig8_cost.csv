@@ -1,0 +1,10 @@
+model,label,cost_ms,macro_f1
+subreddit_probe,Subreddit probe (no content),0.01,0.2884515794924909
+tfidf_lr,TF-IDF + LR (text),0.05,0.6163350972851798
+text,Text only (DistilRoBERTa),15.752,0.6170152341216275
+image,Image only (CLIP),45.7197,0.6244948297766996
+concat,Early fusion (concat),61.4717,0.6389968603206242
+cgf,CGF (proposed),61.4917,0.6247403734600854
+llm_emb,LLM embedding + MLP,426.9115,0.5631707876893852
+llm_zeroshot,LLM zero-shot judge,426.9115,0.385911231821776
+cgf_llm,CGF + LLM,488.4032,0.641606939639385

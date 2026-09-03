@@ -1,0 +1,63 @@
+{
+  "corpus": {
+    "n_posts": 21798,
+    "n_subreddits": 17,
+    "n_true": 11305,
+    "n_fake": 10493,
+    "date_min": "2008-06-24",
+    "date_max": "2019-10-23",
+    "median_title_words": 9.0,
+    "splits": {
+      "random": {
+        "train": 15258,
+        "test": 4361,
+        "val": 2179
+      },
+      "source": {
+        "train": 11806,
+        "test": 6870,
+        "val": 3122
+      },
+      "temporal": {
+        "train": 15258,
+        "test": 4360,
+        "val": 2180
+      }
+    }
+  },
+  "gate": {
+    "random": {
+      "gate_consistency_pearson_r": 0.0726234432925374,
+      "gate_mean_true": 0.4930201768875122,
+      "gate_mean_fake": 0.5000075101852417
+    },
+    "source": {
+      "gate_consistency_pearson_r": 0.19335931721440366,
+      "gate_mean_true": 0.4803159236907959,
+      "gate_mean_fake": 0.48459184169769287
+    },
+    "temporal": {
+      "gate_consistency_pearson_r": 0.11676060114978987,
+      "gate_mean_true": 0.49545493721961975,
+      "gate_mean_fake": 0.5029062628746033
+    }
+  },
+  "protocol_rank_agreement": {
+    "random_vs_source": {
+      "spearman_rho": 0.68,
+      "p_value": 0.0019
+    },
+    "random_vs_temporal": {
+      "spearman_rho": 0.849,
+      "p_value": 1e-05
+    },
+    "source_vs_temporal": {
+      "spearman_rho": 0.527,
+      "p_value": 0.02451
+    },
+    "mean_macro_f1_drop_random_to_source": 0.2126,
+    "best_under_random": "cgf_no_inter",
+    "its_rank_under_source": 8,
+    "n_systems_ranked": 18
+  }
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device" version="24.0.0">
+  <diagram id="cycles" name="Development Cycles and Scope Decisions">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1010" pageHeight="1169" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cycles_title" value="Development Cycles and Scope Decisions" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=20;fontStyle=1;fontColor=#1F3864;" vertex="1" parent="1">
+          <mxGeometry x="40" y="28" width="930" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_note" value="Each cycle ended in a result that determined the next. Two results forced a documented change of scope rather than a change of story." style="text;html=1;align=left;verticalAlign=top;fontFamily=Helvetica;fontSize=10;fontStyle=2;fontColor=#5A6B84;" vertex="1" parent="1">
+          <mxGeometry x="48" y="1091" width="914" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_start" value="Approved proposal" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="96" width="240" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c1" value="Cycle 1&lt;br&gt;Can the corpus be built&lt;br&gt;reproducibly?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="172" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c2" value="Cycle 2&lt;br&gt;Does the label depend&lt;br&gt;on the source?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FBDCC4;strokeColor=#D98F4A;fontColor=#6B3C13;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="276" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c3" value="Cycle 3&lt;br&gt;Does the gap survive&lt;br&gt;a corrected split?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="380" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c4" value="Cycle 4&lt;br&gt;Does explicit consistency&lt;br&gt;help under shift?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="484" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c5" value="Cycle 5&lt;br&gt;Why does consistency&lt;br&gt;hurt across communities?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="588" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c6" value="Cycle 6&lt;br&gt;Does adversarial training&lt;br&gt;close the gap?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="692" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c7" value="Cycle 7&lt;br&gt;Is the gap explained&lt;br&gt;by prior shift?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="796" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_c8" value="Cycle 8&lt;br&gt;Is the architectural&lt;br&gt;margin identifiable?" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="900" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_sc1" value="SC-01&lt;br&gt;Reframe from accuracy&lt;br&gt;to measurement" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FBDCC4;strokeColor=#D98F4A;fontColor=#6B3C13;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="430" y="276" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_sc2" value="SC-02&lt;br&gt;Withdraw the&lt;br&gt;architectural claim" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F3D2CE;strokeColor=#BE7C74;fontColor=#6E2F28;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="430" y="900" width="240" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_drop" value="Two planned fusion&lt;br&gt;variants dropped" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="730" y="276" width="220" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_hon" value="Section 7.2 states&lt;br&gt;the aim was not met" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="730" y="900" width="220" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_end" value="Submitted claim set" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1004" width="240" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_start" target="cycles_c1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c1" target="cycles_c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c2" target="cycles_c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c3" target="cycles_c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c4" target="cycles_c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c5" target="cycles_c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c6" target="cycles_c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c7" target="cycles_c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c2" target="cycles_sc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_sc1" target="cycles_drop">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c8" target="cycles_sc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_sc2" target="cycles_hon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cycles_e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cycles_c8" target="cycles_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

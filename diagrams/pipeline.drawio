@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device" version="24.0.0">
+  <diagram id="pipeline" name="Processing Pipeline">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="880" pageHeight="994" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pipeline_title" value="Processing Pipeline" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=20;fontStyle=1;fontColor=#1F3864;" vertex="1" parent="1">
+          <mxGeometry x="40" y="28" width="800" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_note" value="Each stage writes the cached artefact on its right and reads only the one above, so any stage can be re-run in isolation." style="text;html=1;align=left;verticalAlign=top;fontFamily=Helvetica;fontSize=10;fontStyle=2;fontColor=#5A6B84;" vertex="1" parent="1">
+          <mxGeometry x="48" y="916" width="784" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_start" value="Fakeddit metadata and images" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="96" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s1" value="1. Build the corpus" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="176" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s1a" value="corpus.parquet&lt;br&gt;21,798 posts, three splits" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="176" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s2" value="2. Frozen encoders" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="284" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s2a" value="feat_base.npz&lt;br&gt;CLIP, DistilRoBERTa, consistency" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="284" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s3" value="3. Language model" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="392" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s3a" value="feat_llm.npz&lt;br&gt;hidden state, zero-shot P(false)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="392" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s4" value="4. Experiment grid" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="500" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s4a" value="runs.csv, preds/&lt;br&gt;21 systems, 165 runs" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="500" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s5" value="5. Robustness suite" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="608" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s5a" value="robustness.csv&lt;br&gt;ablation, probe, cost" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="608" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s6" value="6. Analysis and rotation" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D6E4F2;strokeColor=#7BA0C4;fontColor=#1F3864;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="716" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_s6a" value="results/, figures/&lt;br&gt;intervals, tests, rotation" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3B1C2;fontColor=#42506A;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="716" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_end" value="Report figures, tables&lt;br&gt;and triage queue" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F7D6B0;strokeColor=#C98B4E;fontColor=#5B3A17;fontFamily=Helvetica;fontSize=12;strokeWidth=1.5;verticalAlign=middle;align=center;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="110" y="824" width="250" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pipeline_s1" target="pipeline_s1a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_start" target="pipeline_s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pipeline_s2" target="pipeline_s2a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_s1" target="pipeline_s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pipeline_s3" target="pipeline_s3a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_s2" target="pipeline_s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pipeline_s4" target="pipeline_s4a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_s3" target="pipeline_s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pipeline_s5" target="pipeline_s5a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_s4" target="pipeline_s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=6 4;" edge="1" parent="1" source="pipeline_s6" target="pipeline_s6a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_s5" target="pipeline_s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline_e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;jettySize=auto;strokeColor=#7A8CA3;strokeWidth=1.6;endArrow=blockThin;endFill=1;fontFamily=Helvetica;fontSize=10;fontColor=#42506A;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pipeline_s6" target="pipeline_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

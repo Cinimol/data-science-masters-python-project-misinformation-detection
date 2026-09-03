@@ -1,0 +1,128 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "\u25b6 START HERE (menu)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Predict: score one image + headline",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.predict",
+      "args": [
+        "--image",
+        "sandisk-pAKgXLu04CQ-unsplash.jpg",
+        "--headline",
+        "Scientists discover water on the surface of the sun"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false
+    },
+    {
+      "name": "Stage 1: build corpus",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.build_dataset",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 1: build corpus (smoke, 400 posts)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.build_dataset",
+      "args": [
+        "--limit",
+        "400",
+        "--out",
+        "smoke.parquet"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 2: features (CLIP + DistilRoBERTa)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.features",
+      "args": [
+        "--stages",
+        "base"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 2b: features (LLM)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.features",
+      "args": [
+        "--stages",
+        "llm"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 4: train the full grid",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.train",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 4: train (one protocol, one model)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.train",
+      "args": [
+        "--protocols",
+        "source",
+        "--models",
+        "cgf"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 5: analyse (tables + figures)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.analyse",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 6: robustness + cost",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.robustness",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 10: extended analyses",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.extra_analyses",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stage 12: triage queue",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.triage",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

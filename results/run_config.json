@@ -1,0 +1,12 @@
+{
+  "corpus": "smoke.parquet",
+  "prefix": "smoke",
+  "device": "mps",
+  "seeds": "42",
+  "hidden": 256,
+  "lr": 0.001,
+  "batch_size": 256,
+  "epochs": 40,
+  "patience": 6,
+  "dropout": 0.3
+}

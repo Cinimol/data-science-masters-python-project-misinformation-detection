@@ -1,0 +1,15 @@
+{
+  "text_encoder_ms": 15.752,
+  "clip_image_ms": 45.7197,
+  "llm_ms": 426.9115,
+  "fusion_head_ms": 0.02,
+  "text": 15.752,
+  "tfidf_lr": 0.05,
+  "image": 45.7197,
+  "concat": 61.4717,
+  "cgf": 61.4917,
+  "llm_zeroshot": 426.9115,
+  "llm_emb": 426.9115,
+  "cgf_llm": 488.4032,
+  "subreddit_probe": 0.01
+}

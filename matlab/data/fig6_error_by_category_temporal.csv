@@ -1,0 +1,5 @@
+category,accuracy,n,model
+true,0.611816192560175,2285,CGF (proposed)
+misleading content,0.8832968636032094,1371,CGF (proposed)
+imposter content,0.8912280701754386,285,CGF (proposed)
+false connection,0.9260143198090692,419,CGF (proposed)
