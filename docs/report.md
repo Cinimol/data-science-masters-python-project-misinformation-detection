@@ -358,4 +358,3 @@ Zhou, X. and Zafarani, R. (2020) ‘A survey of fake news: fundamental theories,
 
 Zhou, X., Wu, J. and Zafarani, R. (2020) ‘SAFE: similarity-aware multi-modal fake news detection’, Advances in Knowledge Discovery and Data Mining (PAKDD 2020), Lecture Notes in Computer Science, 12085, pp. 354–367. Available from: https://doi.org/10.1007/978-3-030-47436-2_27 .[Accessed 27 August 2026].
 
-# Appendices
