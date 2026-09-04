@@ -4,9 +4,9 @@ subtitle: "Source leakage in a multimodal fake-news benchmark, and what an hones
 author: "MSc Data Science, UFCF9Y-60-M CSCT Masters Project, UWE Bristol"
 ---
 
-# Abstract
+# Abstract 
 
-Automated misinformation detection is routinely reported above 90% accuracy on public multimodal benchmarks, yet deployed systems generalise poorly. This project examines whether those figures measure veracity detection or a more readily learnable property of the data. Using Fakeddit, the largest public multimodal misinformation benchmark, an artefact was constructed comprising a reproducible corpus pipeline over 21,798 posts, a proposed detector (Consistency-Gated Fusion, CGF) that treats the image-headline relationship as an explicit input, and an evaluation framework of three protocols: the conventional random split, a source-disjoint split holding out whole source communities, and a temporal split. A probe classifier that observes only the name of the source community, with no access to text, image or metadata, achieves 100.0% accuracy under the conventional protocol against a permutation null of 0.408, establishing that Fakeddit's distant-supervision labelling makes source identity a complete shortcut. Under the corrected protocol the average system loses 0.213 macro-F1, and resampling the test set to the conventional protocol's class balance shows that class-prior shift accounts for none of that loss; the ranking of architectures also changes materially (Spearman rho = 0.68). A leave-one-community-out rotation over fifteen communities then shows that the choice of held-out community moves accuracy by a standard deviation of 0.245, an order of magnitude larger than the 0.029 separating the best and worst architectures tested, so architectural comparison on a single held-out partition is not identifiable at this corpus size. Domain-adversarial training recovers approximately one seventh of the protocol gap and improves expected calibration error from 0.223 to 0.138. A 0.5B-parameter language model is a below-chance zero-shot judge at seven times the inference cost of the full multimodal pipeline. The work contributes a quantified benchmark confound, a corrected evaluation protocol with an honest account of its own limits, and an open artefact that reproduces every result on a laptop CPU.
+Automated misinformation detection is routinely reported above 90% accuracy on public multimodal benchmarks, yet deployed systems generalize poorly. Using Fakeddit, this project asks whether those figures measure veracity detection or a more readily learnable property of the data. A probe classifier that sees only the name of the source community, with no text, image or metadata, reaches 100.0% accuracy under the conventional random split against a permutation null of 0.408, establishing source identity as a complete shortcut. Under a source-disjoint protocol, the average system loses 0.213 macro-F1, and resampling the test set to the conventional class balance shows that class-prior shift explains none of that loss. A leave-one-community-out rotation moves accuracy by a standard deviation of 0.245, an order of magnitude above the 0.029 separating the best and worst architectures tested, so architectural comparison on a single held-out partition is not identifiable at this corpus size. The work contributes a quantified benchmark confound, a corrected evaluation protocol honest about its own limits, and an open artefact that reproduces every result on a laptop CPU
 
 # Chapter 1: Introduction
 
@@ -36,7 +36,7 @@ Seven objectives follow: O1 review detection, fusion and evaluation methodology;
 
 Chapter 2 reviews the literature, derives user needs and locates the gap; Chapter 3 specifies the artefact; Chapter 4 covers the corpus, protocols, methodology and project management; Chapter 5 implementation and ethics; Chapter 6 the evaluation; Chapter 7 the discussion, evaluation of the approach and reflection; and Chapter 8 concludes.
 
-# Chapter 2: Research
+# Chapter 2: Literature Review
 
 ## 2.1 From feature engineering to representation learning
 
@@ -68,7 +68,7 @@ Three gaps emerge. Methodologically, the source-leakage hypothesis for Fakeddit 
 
 Three elements are claimed as new: a content-free source probe used as a benchmark diagnostic rather than a baseline; source-disjoint and leave-one-community-out evaluation for distantly supervised corpora, with evidence about what such protocols can and cannot identify; and a consistency gate exposed as a readable per-item quantity. Papadopoulos *et al.* (2025) identify a different confound, in what a model learns; the confound here lies upstream, in label provenance, and applies to any distantly supervised corpus regardless of architecture.
 
-# Chapter 3: The Proposed Artefact
+# Chapter 3: Methodology
 
 ## 3.1 Description of the artefact
 
@@ -80,7 +80,7 @@ The artefact is an open, end-to-end Python system with four components, shown in
 
 The aim has two halves, to measure honestly and then to design against the honest measurement, and the artefact is organised around that division: Protocol B and the shortcut probe answer the first (O3), CGF and its adversarial variant the second (O4), and the ablations and behavioural probes establish *why* any difference arises (O6). Seven requirements follow from the objectives and the user needs of Section 2.5: F1 classification from headline, image and metadata; F2 a calibrated probability, not a hard label; F3 an inspectable per-item cross-modal signal; F4 a ranked review queue; NF1 laptop-CPU runtime; NF2 seed reproducibility; NF3 no retained personal data. Appendix G traces each to an acceptance criterion and its verification status.
 
-# Chapter 4: Data and Methodology
+# Chapter 4: Exploratory Data Analysis
 
 ## 4.1 Development methodology
 
@@ -144,7 +144,7 @@ The pipeline requires roughly five CPU-hours and no GPU, four orders of magnitud
 
 **Misuse.** An automated detector is a censorship instrument if used to remove content, so it outputs a calibrated probability with no threshold embedded, calibration error is a first-class metric, and the intended deployment is triage. The project was reviewed under the module's ethics process as secondary analysis of public data with no human participants (Appendix B).
 
-# Chapter 6: Evaluation
+# Chapter 6: Testing
 
 ## 6.1 Experimental setup
 
@@ -268,90 +268,94 @@ The most important result limits the project's own contribution. A fifteen-fold 
 
 # Bibliography
 
-Alam, F., Cresci, S., Chakraborty, T., Silvestri, F., Dimitrov, D., Da San Martino, G., Shaar, S., Firooz, H. and Nakov, P. (2022) 'A survey on multimodal disinformation detection', *Proceedings of the 29th International Conference on Computational Linguistics (COLING 2022)*, pp. 6625–6643. Available from: https://aclanthology.org/2022.coling-1.576/
+Alam, F., Cresci, S., Chakraborty, T., Silvestri, F., Dimitrov, D., Da San Martino, G., Shaar, S., Firooz, H. and Nakov, P. (2022) ‘A survey on multimodal disinformation detection’, Proceedings of the 29th International Conference on Computational Linguistics (COLING 2022), pp. 6625–6643. Available from: https://aclanthology.org/2022.coling-1.576/. [Accessed 1 September 2026].
 
-BCS, The Chartered Institute for IT (2022) *Code of Conduct for BCS Members*. Version 8. Swindon: BCS. Available from: https://www.bcs.org/media/2211/bcs-code-of-conduct.pdf
+BCS, The Chartered Institute for IT (2022) Code of Conduct for BCS Members [online]. Version 8. Swindon: BCS. Available from: https://www.bcs.org/media/2211/bcs-code-of-conduct.pdf [Accessed 29 August 2026].
+Bozarth, L. and Budak, C. (2020) ‘Toward a better performance evaluation framework for fake news classification’, Proceedings of the International AAAI Conference on Web and Social Media, 14(1), pp. 60–71. Available from: https://ojs.aaai.org/index.php/ICWSM/article/view/7279 . [Accessed 27 August 2026].
 
-Bozarth, L. and Budak, C. (2020) 'Toward a better performance evaluation framework for fake news classification', *Proceedings of the International AAAI Conference on Web and Social Media*, 14(1), pp. 60–71. Available from: https://ojs.aaai.org/index.php/ICWSM/article/view/7279
+Chen, C. and Shu, K. (2024) ‘Combating misinformation in the age of LLMs: opportunities and challenges’, AI Magazine [online], 45(3), pp. 354–368. Available from: https://doi.org/10.1002/aaai.12188 . [Accessed 3 September 2026].
+Das, A., Liu, H., Kovatchev, V. and Lease, M. (2023) ‘The state of human-centered NLP technology for fact-checking’, Information Processing & Management [online]. 60(2), 103219. Available from: https://doi.org/10.1016/j.ipm.2022.103219 . [Accessed 25 August 2026]
 
-Chen, C. and Shu, K. (2024) 'Combating misinformation in the age of LLMs: opportunities and challenges', *AI Magazine*, 45(3), pp. 354–368. Available from: https://doi.org/10.1002/aaai.12188
+Devlin, J., Chang, M.-W., Lee, K. and Toutanova, K. (2019) ‘BERT: pre-training of deep bidirectional transformers for language understanding’, Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp. 4171–4186. Available from: https://aclanthology.org/N19-1423/ . [Accessed 1 September 2026].
+Dietterich, T.G. (1998) ‘Approximate statistical tests for comparing supervised classification learning algorithms’, Neural Computation [online].10(7), pp. 1895–1923. Available from: https://doi.org/10.1162/089976698300017197 . [Accessed 2 September 2026].
 
-Das, A., Liu, H., Kovatchev, V. and Lease, M. (2023) 'The state of human-centered NLP technology for fact-checking', *Information Processing & Management*, 60(2), 103219. Available from: https://doi.org/10.1016/j.ipm.2022.103219
+Efron, B. and Tibshirani, R.J. (1993) An Introduction to the Bootstrap. Monographs on Statistics and Applied Probability 57. New York: Chapman & Hall. [online]. Available from: https://doi.org/10.1201/9780429246593 . [Accessed 2 September 2026].
+European Union (2022) Regulation (EU) 2022/2065 of the European Parliament and of the Council of 19 October 2022 on a Single Market For Digital Services and amending Directive 2000/31/EC (Digital Services Act), Official Journal of the European Union, L 277, 210.2022, p. 1. Available from: https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng . [Accessed 21 August 2026]
 
-Devlin, J., Chang, M.-W., Lee, K. and Toutanova, K. (2019) 'BERT: pre-training of deep bidirectional transformers for language understanding', *Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)*, pp. 4171–4186. Available from: https://aclanthology.org/N19-1423/
+Fiesler, C. and Proferes, N. (2018) ‘“Participant” perceptions of Twitter research ethics’, Social Media + Society, 4(1), 2056305118763366. Available from: https://doi.org/10.1177/2056305118763366 . [Accessed 21 August 2026]
 
-Dietterich, T.G. (1998) 'Approximate statistical tests for comparing supervised classification learning algorithms', *Neural Computation*, 10(7), pp. 1895–1923. Available from: https://doi.org/10.1162/089976698300017197
+Franzke, a. s., Bechmann, A., Zimmer, M., Ess, C. and the Association of Internet Researchers (2020) Internet Research: Ethical Guidelines 3.0 [online]. Association of Internet Researchers. Available from: https://aoir.org/reports/ethics3.pdf [Accessed 22 August 2026]
 
-Efron, B. and Tibshirani, R.J. (1993) *An Introduction to the Bootstrap*. Monographs on Statistics and Applied Probability 57. New York: Chapman & Hall.
+Ganin, Y., Ustinova, E., Ajakan, H., Germain, P., Larochelle, H., Laviolette, F., Marchand, M. and Lempitsky, V. (2016) ‘Domain-adversarial training of neural networks’, Journal of Machine Learning Research [online].17(59), pp. 1–35. Available from: https://www.jmlr.org/papers/v17/15-239.html [Accessed 27 August 2026]
 
-European Union (2022) *Regulation (EU) 2022/2065 of the European Parliament and of the Council of 19 October 2022 on a Single Market For Digital Services and amending Directive 2000/31/EC (Digital Services Act)*, OJ L 277, 27.10.2022, p. 1. Available from: https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng
+Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M. and Wichmann, F.A. (2020) ‘Shortcut learning in deep neural networks’. Nature Machine Intelligence [online]. 2 (11), pp. 665–673. Available from: https://doi.org/10.1038/s42256-020-00257-z [Accessed 3 September 2026].
 
-Fiesler, C. and Proferes, N. (2018) '"Participant" perceptions of Twitter research ethics', *Social Media + Society*, 4(1), 2056305118763366. Available from: https://doi.org/10.1177/2056305118763366
+Gillespie, T. (2018) Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media [online]. New Haven, CT: Yale University Press. Available from: https://yalebooks.yale.edu/book/9780300261431/custodians-of-the-internet/ [Accessed 1 September 2026]. 
 
-franzke, a. s., Bechmann, A., Zimmer, M., Ess, C. and the Association of Internet Researchers (2020) *Internet Research: Ethical Guidelines 3.0*. Association of Internet Researchers. Available from: https://aoir.org/reports/ethics3.pdf
+Guo, C., Pleiss, G., Sun, Y. and Weinberger, K.Q. (2017) ‘On calibration of modern neural networks. In: Proceedings of the 34th International Conference on Machine Learning. Sydney, Australia, 6–11 August 2017. Proceedings of Machine Learning Research, 70, pp. 1321–1330. Available from: https://proceedings.mlr.press/v70/guo17a.html [Accessed 2 September 2026]. 
 
-Ganin, Y., Ustinova, E., Ajakan, H., Germain, P., Larochelle, H., Laviolette, F., Marchand, M. and Lempitsky, V. (2016) 'Domain-adversarial training of neural networks', *Journal of Machine Learning Research*, 17(59), pp. 1–35. Available from: https://www.jmlr.org/papers/v17/15-239.html
+Gururangan, S., Swayamdipta, S., Levy, O., Schwartz, R., Bowman, S.R. and Smith, N.A. (2018) ‘Annotation artifacts in natural language inference data’. In: Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers). New Orleans, Louisiana, 1–6 June 2018. Association for Computational Linguistics, pp. 107–112. Available from: https://aclanthology.org/N18-2017/ [Accessed 3 September 2026].
 
-Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M. and Wichmann, F.A. (2020) 'Shortcut learning in deep neural networks', *Nature Machine Intelligence*, 2(11), pp. 665–673. Available from: https://doi.org/10.1038/s42256-020-00257-z
+Holm, S. (1979) ‘A simple sequentially rejective multiple test procedure’. Scandinavian Journal of Statistics [online]. 6 (2), pp. 65–70. Available from: https://www.jstor.org/stable/4615733 [Accessed 28 August 2026].
 
-Gillespie, T. (2018) *Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media*. New Haven, CT: Yale University Press.
+Hu, B., Sheng, Q., Cao, J., Shi, Y., Li, Y., Wang, D. and Qi, P. (2024) ‘Bad actor, good advisor: exploring the role of large language models in fake news detection’. In: Proceedings of the AAAI Conference on Artificial Intelligence. Vancouver, Canada, 20–27 February 2024. Association for the Advancement of Artificial Intelligence, 38 (20), pp. 22105–22113. Available from: https://ojs.aaai.org/index.php/AAAI/article/view/30214 [Accessed 3 September 2026] 
 
-Guo, C., Pleiss, G., Sun, Y. and Weinberger, K.Q. (2017) 'On calibration of modern neural networks', *Proceedings of the 34th International Conference on Machine Learning*, 70, pp. 1321–1330. Available from: https://proceedings.mlr.press/v70/guo17a.html
+Jin, Z., Cao, J., Guo, H., Zhang, Y. and Luo, J. (2017) ‘Multimodal fusion with recurrent neural networks for rumor detection on microblogs. In: Proceedings of the 25th ACM International Conference on Multimedia. Mountain View, California, 23–27 October 2017. Association for Computing Machinery, pp. 795–816. Available from: https://doi.org/10.1145/3123266.3123454  [Accessed 25 August 2026].
 
-Gururangan, S., Swayamdipta, S., Levy, O., Schwartz, R., Bowman, S.R. and Smith, N.A. (2018) 'Annotation artifacts in natural language inference data', *Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers)*, pp. 107–112. Available from: https://aclanthology.org/N18-2017/
+Khattar, D., Goud, J.S., Gupta, M. and Varma, V. (2019) ‘MVAE: multimodal variational autoencoder for fake news detection’. In: Proceedings of the 2019 World Wide Web Conference (WWW ’19). San Francisco, California, 13–17 May 2019. Association for Computing Machinery, pp. 2915–2921. Available from: https://doi.org/10.1145/3308558.3313552 . [Accessed 3 September 2026].
 
-Holm, S. (1979) 'A simple sequentially rejective multiple test procedure', *Scandinavian Journal of Statistics*, 6(2), pp. 65–70. Available from: https://www.jstor.org/stable/4615733
+Luo, G., Darrell, T. and Rohrbach, A. (2021) ‘NewsCLIPpings: automatic generation of out-of-context multimodal media’. In: Moens, M.-F., Huang, X., Specia, L. and Yih, S.W.-t., eds. Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. Online and Punta Cana, Dominican Republic, 7–11 November 2021. Association for Computational Linguistics, pp. 6801–6817. Available from: https://aclanthology.org/2021.emnlp-main.545/ .[Accessed 18 August 2026].
 
-Hu, B., Sheng, Q., Cao, J., Shi, Y., Li, Y., Wang, D. and Qi, P. (2024) 'Bad actor, good advisor: exploring the role of large language models in fake news detection', *Proceedings of the AAAI Conference on Artificial Intelligence*, 38(20), pp. 22105–22113. Available from: https://ojs.aaai.org/index.php/AAAI/article/view/30214
+McNemar, Q. (1947) ‘Note on the sampling error of the difference between correlated proportions or percentages’. Psychometrika [online]. 12 (2), pp. 153–157. Available from: https://doi.org/10.1007/BF02295996 .[Accessed 18 August 2026].
 
-Jin, Z., Cao, J., Guo, H., Zhang, Y. and Luo, J. (2017) 'Multimodal fusion with recurrent neural networks for rumor detection on microblogs', *Proceedings of the 25th ACM International Conference on Multimedia*, pp. 795–816. Available from: https://doi.org/10.1145/3123266.3123454
+Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I.D. and Gebru, T. (2019) ‘Model cards for model reporting’. In: FAT ’19: Proceedings of the Conference on Fairness, Accountability, and Transparency. Atlanta, Georgia, 29–31 January 2019. Association for Computing Machinery, pp. 220–229. Available from: https://doi.org/10.1145/3287560.3287596 .[Accessed 20 August 2026].
 
-Khattar, D., Goud, J.S., Gupta, M. and Varma, V. (2019) 'MVAE: multimodal variational autoencoder for fake news detection', *The World Wide Web Conference (WWW '19)*, pp. 2915–2921. Available from: https://doi.org/10.1145/3308558.3313552
+Nakamura, K., Levy, S. and Wang, W.Y. (2020) ‘Fakeddit: a new multimodal benchmark dataset for fine-grained fake news detection’. In: Proceedings of the Twelfth Language Resources and Evaluation Conference. Marseille, France, 11–16 May 2020. European Language Resources Association, pp. 6149–6157. Available from: https://aclanthology.org/2020.lrec-1.755/ . [Accessed 20 August 2026].
 
-Luo, G., Darrell, T. and Rohrbach, A. (2021) 'NewsCLIPpings: automatic generation of out-of-context multimodal media', *Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing*, pp. 6801–6817. Available from: https://aclanthology.org/2021.emnlp-main.545/
+Nakov, P., Corney, D., Hasanain, M., Alam, F., Elsayed, T., Barrón-Cedeño, A., Papotti, P., Shaar, S. and Da San Martino, G. (2021) ‘Automated fact-checking for assisting human fact-checkers’. In: Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence (IJCAI-21). Montreal, Canada, 19–27 August 2021. International Joint Conferences on Artificial Intelligence Organization, pp. 4551–4558. Available from: https://www.ijcai.org/proceedings/2021/619. [Accessed 30 August 2026]. 
 
-McNemar, Q. (1947) 'Note on the sampling error of the difference between correlated proportions or percentages', *Psychometrika*, 12(2), pp. 153–157. Available from: https://doi.org/10.1007/BF02295996
+Nissenbaum, H. (2010) Privacy in Context: Technology, Policy, and the Integrity of Social Life [online]. Stanford, CA: Stanford University Press. Available from: https://www.sup.org/books/law/privacy-context . [Accessed 3 September 2026]. 
 
-Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I.D. and Gebru, T. (2019) 'Model cards for model reporting', *FAT\* '19: Proceedings of the Conference on Fairness, Accountability, and Transparency*, pp. 220–229. Available from: https://doi.org/10.1145/3287560.3287596
+Papadopoulos, S.-I., Koutlis, C., Papadopoulos, S. and Petrantonakis, P.C. (2025) ‘Similarity over factuality: are we making progress on multimodal out-of-context misinformation detection?’, Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025), pp. 5570–5579. Available from: https://openaccess.thecvf.com/content/WACV2025/html/Papadopoulos_Similarity_over_Factuality_Are_we_Making_Progress_on_Multimodal_Out-of-Context_WACV_2025_paper.html . [Accessed 1 September 2026].
 
-Nakamura, K., Levy, S. and Wang, W.Y. (2020) 'Fakeddit: a new multimodal benchmark dataset for fine-grained fake news detection', *Proceedings of the Twelfth Language Resources and Evaluation Conference*, pp. 6149–6157. Available from: https://aclanthology.org/2020.lrec-1.755/
+Qi, P., Yan, Z., Hsu, W. and Lee, M.L. (2024) ‘SNIFFER: multimodal large language model for explainable out-of-context misinformation detection’, Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2024), pp. 13052–13062. Available from:  https://openaccess.thecvf.com/content/CVPR2024/html/Qi_SNIFFER_Multimodal_Large_Language_Model_for_Explainable_Out-of-Context_Misinformation_Detection_CVPR_2024_paper.html .[Accessed 1 September 2026].
 
-Nakov, P., Corney, D., Hasanain, M., Alam, F., Elsayed, T., Barrón-Cedeño, A., Papotti, P., Shaar, S. and Da San Martino, G. (2021) 'Automated fact-checking for assisting human fact-checkers', *Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence (IJCAI-21)*, pp. 4551–4558. Available from: https://www.ijcai.org/proceedings/2021/619
+Qwen Team (2024) Qwen2.5 technical report [online]. arXiv:2412.15115. Available from: https://arxiv.org/abs/2412.15115 .[Accessed 1 September 2026].
 
-Nissenbaum, H. (2010) *Privacy in Context: Technology, Policy, and the Integrity of Social Life*. Stanford, CA: Stanford University Press.
+Papadopoulos, S.-I., Koutlis, C., Papadopoulos, S. and Petrantonakis, P.C. (2025) Similarity over factuality: are we making progress on multimodal out-of-context misinformation detection? In: Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025), pp. 5570–5579. Available from: https://openaccess.thecvf.com/content/WACV2025/html/Papadopoulos_Similarity_over_Factuality_Are_we_Making_Progress_on_Multimodal_Out-of-Context_WACV_2025_paper.html .[Accessed 1 September 2026].
 
-Papadopoulos, S.-I., Koutlis, C., Papadopoulos, S. and Petrantonakis, P.C. (2025) 'Similarity over factuality: are we making progress on multimodal out-of-context misinformation detection?', *Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)*, pp. 5570–5579. Available from: https://openaccess.thecvf.com/content/WACV2025/html/Papadopoulos_Similarity_over_Factuality_Are_we_Making_Progress_on_Multimodal_Out-of-Context_WACV_2025_paper.html
+Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G. and Sutskever, I. (2021) ‘Learning transferable visual models from natural language supervision’, Proceedings of the 38th International Conference on Machine Learning, 139, pp. 8748–8763. Available from: https://proceedings.mlr.press/v139/radford21a.html .[Accessed 2 September 2026].
 
-Qi, P., Yan, Z., Hsu, W. and Lee, M.L. (2024) 'SNIFFER: multimodal large language model for explainable out-of-context misinformation detection', *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2024)*, pp. 13052–13062. Available from: https://openaccess.thecvf.com/content/CVPR2024/html/Qi_SNIFFER_Multimodal_Large_Language_Model_for_Explainable_Out-of-Context_Misinformation_Detection_CVPR_2024_paper.html
+Hu, B., Sheng, Q., Cao, J., Shi, Y., Li, Y., Wang, D. and Qi, P. (2024) Bad actor, good advisor: exploring the role of large language models in fake news detection. In: Proceedings of the AAAI Conference on Artificial Intelligence, 38 (20), pp. 22105–22113. Available from: https://ojs.aaai.org/index.php/AAAI/article/view/30214 .[Accessed 2 September 2026].
 
-Qwen Team (2024) *Qwen2.5 technical report*. arXiv:2412.15115. Available from: https://arxiv.org/abs/2412.15115
+Rashkin, H., Choi, E., Jang, J.Y., Volkova, S. and Choi, Y. (2017) ‘Truth of varying shades: analyzing language in fake news and political fact-checking’, Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pp. 2931–2937. Available from: https://aclanthology.org/D17-1317/ .[Accessed 10 August 2026].
 
-Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G. and Sutskever, I. (2021) 'Learning transferable visual models from natural language supervision', *Proceedings of the 38th International Conference on Machine Learning*, 139, pp. 8748–8763. Available from: https://proceedings.mlr.press/v139/radford21a.html
+Roberts, S.T. (2019) Behind the Screen: Content Moderation in the Shadows of Social Media [online]. New Haven, CT: Yale University Press. Available from: https://yalebooks.yale.edu/book/9780300261479/behind-the-screen/ .[Accessed 20 August 2026].
 
-Rashkin, H., Choi, E., Jang, J.Y., Volkova, S. and Choi, Y. (2017) 'Truth of varying shades: analyzing language in fake news and political fact-checking', *Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing*, pp. 2931–2937. Available from: https://aclanthology.org/D17-1317/
+Sanh, V., Debut, L., Chaumond, J. and Wolf, T. (2019) DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv:1910.01108. Available from: https://arxiv.org/abs/1910.01108 .[Accessed 30 August 2026].
 
-Roberts, S.T. (2019) *Behind the Screen: Content Moderation in the Shadows of Social Media*. New Haven, CT: Yale University Press.
+Shen, X., Huang, M., Hu, Z., Cai, S. and Zhou, T. (2024) ‘Multimodal fake news detection with contrastive learning and optimal transport’, Frontiers in Computer Science, 6, article 1473457. Available from: https://doi.org/10.3389/fcomp.2024.1473457 .[Accessed 25 August 2026].
 
-Sanh, V., Debut, L., Chaumond, J. and Wolf, T. (2019) *DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter*. arXiv:1910.01108. Available from: https://arxiv.org/abs/1910.01108
+Shu, K., Sliva, A., Wang, S., Tang, J. and Liu, H. (2017) ‘Fake news detection on social media: a data mining perspective’, ACM SIGKDD Explorations Newsletter [online]. 19(1), pp. 22–36. Available from: https://doi.org/10.1145/3137597.3137600 .[Accessed 30 August 2026].
 
-Shen, X., Huang, M., Hu, Z., Cai, S. and Zhou, T. (2024) 'Multimodal fake news detection with contrastive learning and optimal transport', *Frontiers in Computer Science*, 6, article 1473457. Available from: https://doi.org/10.3389/fcomp.2024.1473457
+Spearman, C. (1904) ‘The proof and measurement of association between two things’. The American Journal of Psychology [online]. 15 (1), pp. 72–101. Available from: https://doi.org/10.2307/1412159 .[Accessed 2 September 2026].
 
-Shu, K., Sliva, A., Wang, S., Tang, J. and Liu, H. (2017) 'Fake news detection on social media: a data mining perspective', *ACM SIGKDD Explorations Newsletter*, 19(1), pp. 22–36. Available from: https://doi.org/10.1145/3137597.3137600
+Strubell, E., Ganesh, A. and McCallum, A. (2019) ‘Energy and policy considerations for deep learning in NLP’, Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pp. 3645–3650. Available from: https://aclanthology.org/P19-1355/ .[Accessed 1 September 2026]. 
 
-Spearman, C. (1904) 'The proof and measurement of association between two things', *The American Journal of Psychology*, 15(1), pp. 72–101. Available from: https://doi.org/10.2307/1412159
+Thorne, J. and Vlachos, A. (2018) ‘Automated fact checking: task formulations, methods and future directions. In: Bender, E.M., Derczynski, L. and Isabelle, P., eds. Proceedings of the 27th International Conference on Computational Linguistics. Santa Fe, New Mexico, USA, 20–25 August 2018. Association for Computational Linguistics, pp. 3346–3359. Available from: https://aclanthology.org/C18-1283/ .[Accessed 1 September 2026]. 
 
-Strubell, E., Ganesh, A. and McCallum, A. (2019) 'Energy and policy considerations for deep learning in NLP', *Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics*, pp. 3645–3650. Available from: https://aclanthology.org/P19-1355/
+Torralba, A. and Efros, A.A. (2011) ‘Unbiased look at dataset bias’, Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2011), pp. 1521–1528. Available from: https://doi.org/10.1109/CVPR.2011.5995347 .[Accessed 12 August 2026]. 
 
-Thorne, J. and Vlachos, A. (2018) 'Automated fact checking: task formulations, methods and future directions', *Proceedings of the 27th International Conference on Computational Linguistics*, pp. 3346–3359. Available from: https://aclanthology.org/C18-1283/
+Wang, Y., Ma, F., Jin, Z., Yuan, Y., Xun, G., Jha, K., Su, L. and Gao, J. (2018) ‘EANN: event adversarial neural networks for multi-modal fake news detection’, Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, pp. 849–857. Available from: https://doi.org/10.1145/3219819.3219903 .[Accessed 1 September 2026]. 
 
-Torralba, A. and Efros, A.A. (2011) 'Unbiased look at dataset bias', *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2011)*, pp. 1521–1528. Available from: https://doi.org/10.1109/CVPR.2011.5995347
+Zellers, R., Holtzman, A., Rashkin, H., Bisk, Y., Farhadi, A., Roesner, F. and Choi, Y. (2019) ‘Defending against neural fake news’, Advances in Neural Information Processing Systems 32 (NeurIPS 2019). Available from: https://proceedings.neurips.cc/paper/2019/hash/3e9f0fc9b2f89e043bc6233994dfcf76-Abstract.html .[Accessed 1 September 2026].
 
-Wang, Y., Ma, F., Jin, Z., Yuan, Y., Xun, G., Jha, K., Su, L. and Gao, J. (2018) 'EANN: event adversarial neural networks for multi-modal fake news detection', *Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining*, pp. 849–857. Available from: https://doi.org/10.1145/3219819.3219903
+Shen, X., Huang, M., Hu, Z., Cai, S. and Zhou, T. (2024) ‘Multimodal fake news detection with contrastive learning and optimal transport’, Frontiers in Computer Science, 6, article 1473457. Available from: https://doi.org/10.3389/fcomp.2024.1473457 .[Accessed 29 August 2026].
 
-Zellers, R., Holtzman, A., Rashkin, H., Bisk, Y., Farhadi, A., Roesner, F. and Choi, Y. (2019) 'Defending against neural fake news', *Advances in Neural Information Processing Systems 32 (NeurIPS 2019)*. Available from: https://proceedings.neurips.cc/paper/2019/hash/3e9f0fc9b2f89e043bc6233994dfcf76-Abstract.html
+Zhang, Y., Liao, Q.V. and Bellamy, R.K.E. (2020) ‘Effect of confidence and explanation on accuracy and trust calibration in AI-assisted decision making’, Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency (FAT* ’20), pp. 295–305. Available from: https://doi.org/10.1145/3351095.3372852 .[Accessed 29 August 2026].
 
-Zhang, Y., Liao, Q.V. and Bellamy, R.K.E. (2020) 'Effect of confidence and explanation on accuracy and trust calibration in AI-assisted decision making', *Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency (FAT\* '20)*, pp. 295–305. Available from: https://doi.org/10.1145/3351095.3372852
+Zhou, X. and Zafarani, R. (2020) ‘A survey of fake news: fundamental theories, detection methods, and opportunities’, ACM Computing Surveys [online]. 53(5), article 109, pp. 1–40. Available from: https://doi.org/10.1145/3395046 .[Accessed 28 August 2026].
 
-Zhou, X. and Zafarani, R. (2020) 'A survey of fake news: fundamental theories, detection methods, and opportunities', *ACM Computing Surveys*, 53(5), article 109, pp. 1–40. Available from: https://doi.org/10.1145/3395046
+Zhou, X., Wu, J. and Zafarani, R. (2020) ‘SAFE: similarity-aware multi-modal fake news detection’, Advances in Knowledge Discovery and Data Mining (PAKDD 2020), Lecture Notes in Computer Science, 12085, pp. 354–367. Available from: https://doi.org/10.1007/978-3-030-47436-2_27 .[Accessed 27 August 2026].
 
-Zhou, X., Wu, J. and Zafarani, R. (2020) 'SAFE: similarity-aware multi-modal fake news detection', *Advances in Knowledge Discovery and Data Mining (PAKDD 2020)*, Lecture Notes in Computer Science, 12085, pp. 354–367. Available from: https://doi.org/10.1007/978-3-030-47436-2_27
+# Appendices
