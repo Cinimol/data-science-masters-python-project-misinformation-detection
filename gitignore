@@ -1,0 +1,34 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+vscode-config/
+_to_delete/
+.DS_Store
+src.zip
+
+# Large generated data — rebuild with `make data && make features`
+# (data/raw/fakeddit_100k.tsv is the exception: trimmed to the 21,798 rows
+# the pipeline actually uses, well under GitHub's 25 MB limit, so it's kept
+# in the repo for reproducibility instead of being re-downloaded/re-sampled.)
+data/raw/*
+!data/raw/fakeddit_100k.tsv
+data/images/
+data/interim/
+data/processed/*.npz
+data/processed/*.parquet
+
+# Local logs and rendering scratch
+logs_*.txt
+docs/page-*.jpg
+docs/hi-*.jpg
+docs/crop.png
+docs/*.pdf
+docs/full_report.md
+docs/_apply.py
+docs/_parts.py
+docs/_build_appendices.py
+*.zip

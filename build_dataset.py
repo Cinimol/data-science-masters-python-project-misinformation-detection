@@ -26,8 +26,10 @@ Usage
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 import io
+import shutil
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -46,7 +48,18 @@ LOG = print
 
 # --------------------------------------------------------------------------- #
 def download_metadata() -> pd.DataFrame:
-    """Fetch (once) and load the Fakeddit metadata table."""
+    """Fetch (once) and load the Fakeddit metadata table.
+
+    Resolution order: the plain .tsv if already present; else a gzipped
+    sibling (``fakeddit_100k.tsv.gz``) is decompressed in place -- this is
+    how the file ships in the repository, kept under GitHub's 25 MB limit;
+    else it is downloaded fresh from the public mirror.
+    """
+    gz_path = C.FAKEDDIT_TSV.with_suffix(C.FAKEDDIT_TSV.suffix + ".gz")
+    if not C.FAKEDDIT_TSV.exists() and gz_path.exists():
+        LOG(f"[meta] decompressing {gz_path.name}")
+        with gzip.open(gz_path, "rb") as src, open(C.FAKEDDIT_TSV, "wb") as dst:
+            shutil.copyfileobj(src, dst)
     if not C.FAKEDDIT_TSV.exists():
         LOG(f"[meta] downloading {C.FAKEDDIT_TSV_URL}")
         r = requests.get(C.FAKEDDIT_TSV_URL, timeout=300)
